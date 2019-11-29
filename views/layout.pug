@@ -1,12 +1,24 @@
 doctype
-html
+html(lang="ko")
   head
-    meta(charset="EUC-KR")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title Insert title here
     link(rel="stylesheet" href="/css/index.css")
-    link(rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css")
-    script(src="http://code.jquery.com/jquery-1.9.1.min.js")
-    script(src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js")
+    //link(rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css")
+    //script(src="http://code.jquery.com/jquery-1.9.1.min.js")
+    //script(src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js")
+
+    // 합쳐지고 최소화된 최신 CSS
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+    // 부가적인 테마
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css")
+    // 합쳐지고 최소화된 최신 자바스크립트
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
+    // jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다)
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+
     script(type="text/javascript" src="http://localhost:9725/socket.io/socket.io.js")
     script(src="/js/member.js")
     script(src="/js/login.js")

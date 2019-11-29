@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    body
+        div#joinPage
+            div(align="right")
+                a.btn.btn-lg.btn-primary(href="/") 나가기
+            div(align="center")    
+                h1.form-signin-heading 회원가입
+            div(align="center")
+                table#joinTb
+                    tr
+                        td
+                            h5= "아이디    "
+                                span#idCheck= "[ID입력]"
+                            input#j_id.form-control(placeholder="Id")
+                            h5= "비밀번호"
+                            input#j_pw.form-control(placeholder="Password" type="password")
+                    tr
+                        td
+                            a#j_submit.btn.btn-lg.btn-primary.btn-block 회원가입

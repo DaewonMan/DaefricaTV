@@ -4,37 +4,24 @@ block content
     body
         div(data-role="page" id="loginPage")
             div(data-role="content" id="loginCtt" align="center")
-                form(name="loginForm" action="/member/login/do" method="post")
+                form.form-signin(name="loginForm" action="/member/login/do" method="post")
                     table#mainTb
                         tr
                             td(align="center")
                                 img#mainImg(src="/img/dftv_logo.png")
                         tr
                             td(align="center")
-                                input#l_id(placeholder="ID" name="wst_id")
-                                input#l_pw(placeholder="PW" type="password" name="wst_password")
+                                input#l_id.form-control(placeholder="Id" name="wst_id")
                         tr
-                            td
-                                input#l_Submit(type="submit" data-role="button" data-transition="slideup" value="로 그 인")
-                                a(href="#joinPage" data-role="button" data-transition="slidedown") 회원가입
-            div(data-role="footer" data-position="fixed")
-                h1 MADE BY DaeBro
-
-        div#joinPage(data-role="page")
-            div(data-role="header" data-position="fixed")
-                a(href="#loginPage" data-role="button" data-icon="arrow-l" data-transition="flow") 나가기
-                h1 회원가입
-            div(data-role="content")
-                table#joinTb
-                    tr
-                        td
-                            h5= "아이디    "
-                                span#idCheck= "[ID입력]"
-                            input#j_id
-                            h5= "비밀번호"
-                            input#j_pw(type="password")
-                    tr
-                        td
-                            a#j_submit(data-role="button" data-transition="slideup") 회원가입
-            div(data-role="footer" data-position="fixed")
-                h1 MADE BY DaeBro
+                            td(align="center")
+                                input#l_pw.form-control(placeholder="Password" type="password" name="wst_password")
+                        tr
+                            td(align="center")
+                                div(class="checkbox")
+                                    label
+                                        input(type="checkbox" value="remember-me")
+                                        remm Remember me
+                        tr
+                            td(align="center")
+                                input#l_Submit.btn.btn-lg.btn-primary.btn-block(type="submit" value="로 그 인")
+                                a.btn.btn-lg.btn-primary.btn-block(href="/member/join/go" data-role="button" data-transition="slidedown") 회원가입

@@ -63,6 +63,15 @@ router.get('/join/do', isNotLoggedIn, async (req, res, next) => {
    }
 });
 
+router.get('/join/go', async (req, res, next) => {
+  try {
+    res.render('join');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
   router.post('/login/do', (req, res, next) => {
     passport.authenticate('local', (authError, user, info) => {
       if (authError) {
