@@ -3,10 +3,9 @@ extends layout
 block content
     div#mainPage(data-role="page")
         div(data-role="header" data-position="fixed")
-            a(href="#loginPage" data-role="button" data-icon="arrow-l" data-transition="flow") 나가기
             h1 
                 input(align="center" placeholder="검색창")
-            a#logout(data-role="button" data-icon="arrow-r" data-transition="flow") 로그아웃
+            a#logout(data-role="button" data-icon="arrow-l" data-transition="flow") 로그아웃
         div(data-role="content" align="center")
             table#mainTb
                 tr
@@ -30,4 +29,4 @@ block content
                 tr
                     td dd
         div(data-role="footer" data-position="fixed")
-            h1 MADE BY DWM
+            h1 MADE BY DaeBro
