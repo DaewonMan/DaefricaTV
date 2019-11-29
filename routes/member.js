@@ -1,9 +1,9 @@
 const express = require('express');
 const passport = require('passport');
 const multer = require('multer');
-const bcrypt = require('bcrypt-nodejs');
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require('bcrypt');
 const { isLoggedIn, isNotLoggedIn } = require('./middlewares');
 
 //onst Room = require('../schemas/room');
@@ -40,28 +40,28 @@ router.get('/join/check', async (req, res, next) => {
 
 //const upload = multer();
 //router.get('/join/do', isNotLoggedIn, upload.none(), async (req, res, next) => {
-  router.get('/join/do', isNotLoggedIn, async (req, res, next) => {
-    try {
-        //const hash = await bcrypt.hash(req.body.pw, 12);
-        const hash = await bcrypt.hash(req.query.pw, 12);
-        const user = new User({
-            wst_id: req.query.id,
-            wst_password: hash,
-          });
-          const newUser = await User.create(user);
+router.get('/join/do', isNotLoggedIn, async (req, res, next) => {
+  try {
+       //const hash = await bcrypt.hash(req.body.pw, 12);
+       const hash = await bcrypt.hash(req.query.pw, 12);
+       const user = new User({
+           wst_id: req.query.id,
+           wst_password: hash,
+         });
+         const newUser = await User.create(user);
 
-          var userResult = "";
-        if(newUser) {
-            userResult = "OK";
-        } else {
-            userResult = "NO";
-        }
-        return res.json(userResult);
-    } catch (error) {
-      console.error(error);
-      next(error);
-    }
-  });
+         var userResult = "";
+       if(newUser) {
+           userResult = "OK";
+       } else {
+           userResult = "NO";
+       }
+       return res.json(userResult);
+   } catch (error) {
+     console.error(error);
+     next(error);
+   }
+});
 
   router.post('/login/do', (req, res, next) => {
     passport.authenticate('local', (authError, user, info) => {

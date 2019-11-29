@@ -10,7 +10,9 @@ module.exports = () => {
       mongoose.set('debug', true);
     }
     mongoose.connect(MONGO_URL, {
-      dbName: 'wonstalk',
+      dbName: 'daefricatv',
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }, (error) => {
       if (error) {
         console.log('몽고디비 연결 에러', error);

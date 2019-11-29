@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
       */
       if(req.user) {
         res.render('loginOk', {
-          title: 'wonstalk',
+          title: 'daefricatv',
           twits: [],
           user: req.user,
           loginError: req.flash('loginError'),
