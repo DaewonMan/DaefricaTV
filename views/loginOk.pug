@@ -1,12 +1,22 @@
 extends layout
 
 block content
-    div#mainPage
-        div
-            h1 
-                input(align="center" placeholder="검색창")
-            a#logout 로그아웃
-        div(data-role="content" align="center")
+    div#mainPage.container
+        div.header.navbar-collapse.collapse
+            nav.navbar-form.navbar-right
+                ul.nav.nav-pills.pull-right
+                    li(role="presentation")
+                        a(href="#") Home
+                    li(role="presentation")
+                        a(href="#") About
+                    li(role="presentation")
+                        a(href="#") Contact
+                    li(role="presentation")
+                        a#logout Logout
+            form.navbar-form.navbar-right
+                input.form-control(type="text" placeholder="Search...")
+            h3.text-muted DaefricaTV
+        div(align="center")
             table#mainTb
                 tr
                     td(align="center")= user.wst_id + ' 님 반갑습니다'
