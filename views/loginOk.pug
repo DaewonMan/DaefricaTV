@@ -1,40 +1,61 @@
 extends layout
 
 block content
-    div#mainPage.container
-        div.header.navbar-collapse.collapse
-            nav.navbar-form.navbar-right
-                ul.nav.nav-pills.pull-right
-                    li(role="presentation")
-                        a(href="#") Home
-                    li(role="presentation")
-                        a(href="#") About
-                    li(role="presentation")
-                        a(href="#") Contact
-                    li(role="presentation")
-                        a#logout Logout
-            form.navbar-form.navbar-right
-                input.form-control(type="text" placeholder="Search...")
-            h3.text-muted DaefricaTV
-        div(align="center")
-            table#mainTb
-                tr
-                    td(align="center")= user.wst_id + ' 님 반갑습니다'
-                tr
-                    td(align="center") 내용~~~~~~~~~~
-                tr
-                    td(align="left") FRIENDS LIST
-            div
-                table#mainFriendsTb
-                    tr
-                        td dddd
-                    tr
-                        td dddd
-        div#loginOkDivBtm
-            table
-                tr
-                    td(align="center") 친구리스트
-                    td(align="center") 대화방목록
-                    td(align="center") 기타설정
-                tr
-                    td dd
+    div#mainPage
+        nav.header.navbar.navbar-inverse.navbar-fixed-top
+            div.container-fluid
+                div.navbar-header
+                    button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="/") DaefricaTV
+                div#navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li(role="presentation")
+                            a(href="/") Home
+                        li(role="presentation")
+                            a(href="#") About
+                        li(role="presentation")
+                            a(href="#") Contact
+                        li(role="presentation")
+                            a#logout Logout
+                    form.navbar-form.navbar-right
+                        input.form-control(type="text" placeholder="Search...")
+        div.container-fluid
+            div.row.loginOkSideBar
+                div.col-sm-3.col-md-2.sidebar
+                    ul.nav.nav-sidebar
+                        li.active
+                            a(href="#") Overview
+                                span.sr-only (current)
+                        li
+                            a(href="#") Reports
+                        li
+                            a(href="#") Analytics
+                        li
+                            a(href="#") Export
+                div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                    div(align="center")
+                        table#mainTb
+                            tr
+                                td(align="center")= user.wst_id + ' 님 반갑습니다'
+                            tr
+                                td(align="center") 내용~~~~~~~~~~
+                            tr
+                                td(align="left") FRIENDS LIST
+                    div
+                        table#mainFriendsTb
+                            tr
+                                td dddd
+                            tr
+                                td dddd
+                    div#loginOkDivBtm
+                        table
+                            tr
+                                td(align="center") 친구리스트
+                                td(align="center") 대화방목록
+                                td(align="center") 기타설정
+                            tr
+                                td dd
