@@ -35,3 +35,26 @@
 .loginOkSideBar{
 	margin-top: 55px;
 }
+
+.loginOkMainTd2 {
+	width: 100%;
+}
+
+.roomOutlineDiv {
+	float: left;
+	padding: 5px;
+}
+.roomListDiv {
+	width: 70px;
+	height: 70px;
+	font-size: small;
+	font-weight: 300;
+	text-align: center;
+	color: black;
+	background-color: blue;
+}
+
+#homeBd{
+	width: 100%;
+	height: 100%;
+}

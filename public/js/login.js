@@ -8,4 +8,7 @@ $(function(){
 
     // 로그아웃
     logout();
+
+    // 방 만들기
+    createRoom();
 });

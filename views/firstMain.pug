@@ -1,0 +1,32 @@
+extends loginOk
+
+block contentBottom
+    div.container-fluid
+        div.row
+            div.loginOkSideBar
+                table
+                    tr
+                        td.test11
+                            div.col-sm-3.col-md-2.sidebar
+                                ul.nav.nav-sidebar
+                                    li.active
+                                        a(href="#") Overview
+                                            span.sr-only (current)
+                                    li
+                                        a(href="#") Reports
+                                    li
+                                        a(href="#") Analytics
+                                    li
+                                        a(href="#") Export
+                        td.loginOkMainTd2
+                            div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                                table
+                                    tr
+                                        td(align="center")
+                                            h5= user.wst_id + ' 님 반갑습니다'
+                                        td
+                                            button#createRoomBtn="방 만들기"     
+                                h1.page-header 채팅방 리스트
+                                div.row.placeholders
+                                    block roomArea
+                                    //div.col-xs-6.col-sm-3.placeholder

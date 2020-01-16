@@ -1,0 +1,14 @@
+extends firstMain
+
+block roomArea
+    #homeBd
+        if room.length <= 0
+            div#noPostDiv
+                //img(src="/img/nothing.png")
+                //br
+                span 방 없음
+        else
+            each r, index in room
+                div.roomOutlineDiv(align="center")
+                    a(class="postATag" + room[index].dftv_createdId href="/post/show?id=" + room[index].dftv_createdId)
+                        div.roomListDiv(style='background-color:' + room[index].dtv_roomColor)= room[index].dtv_title + ""

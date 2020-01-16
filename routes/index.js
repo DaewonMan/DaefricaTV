@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-//onst Room = require('../schemas/room');
+const Room = require('../schemas/room');
 //const Chat = require('../schemas/chat');
 
 const router = express.Router();
@@ -17,10 +17,12 @@ router.get('/', async (req, res, next) => {
       console.log('session info2 : ' + req.session.cookie.user);
       */
       if(req.user) {
-        res.render('loginOk', {
+        var rooms = await Room.find();
+        res.render('rooms', {
           title: 'daefricatv',
           twits: [],
           user: req.user,
+          room: rooms,
           loginError: req.flash('loginError'),
         });
         req.flash('loginSuccess', '로그인 성공하였습니다.'); 

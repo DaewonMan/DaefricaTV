@@ -11,6 +11,8 @@ require('dotenv').config();
 const webSocket = require('./socket');
 const indexRouter = require('./routes');
 const memberRouter = require('./routes/member');
+const roomRouter = require('./routes/room');
+const testRouter = require('./routes/test');
 const connect = require('./schemas');
 const passportConfig = require('./passport');
 
@@ -53,6 +55,8 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/member', memberRouter);
+app.use('/room', roomRouter);
+app.use('/test', testRouter);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
